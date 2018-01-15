@@ -1,0 +1,65 @@
+/*
+ *
+ */
+
+import java.text.SimpleDateFormat
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+ext.cascadingVersion = '2.7.0'
+ext.hadoop2Version = '2.4.1'
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+  maven{ url 'http://conjars.org/repo/' }
+}
+
+dependencies {
+  compile group: 'cascading', name: 'cascading-core', version: cascadingVersion
+//  compile group: 'cascading', name: 'cascading-xml', version: cascadingVersion // not required
+  compile group: 'cascading', name: 'cascading-local', version: cascadingVersion
+  compile group: 'cascading', name: 'cascading-hadoop2-mr1', version: cascadingVersion
+
+  // these runtime deps allow the sample app to be run in an ide
+
+  runtime group: 'log4j', name: 'log4j', version: '1.2.17'
+  runtime group: 'org.slf4j', name: 'slf4j-api', version: '1.7.5'
+  runtime group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.5'
+
+  runtime group: 'org.apache.hadoop', name: 'hadoop-mapreduce-client-core', version: hadoop2Version
+  runtime group: 'org.apache.hadoop', name: 'hadoop-minicluster', version: hadoop2Version
+}
+
+jar {
+  description = "Assembles a Hadoop ready jar file"
+  into( 'lib' ) {
+    from configurations.compile
+  }
+//  doFirst {
+//
+//  }
+
+  manifest {
+    attributes( "Main-Class": "cascading/project/MainHadoop" )
+  }
+}
+
+task distCopy( type: Copy, dependsOn: jar ) {
+
+  into "${buildDir}/dist/${archivesBaseName}"
+
+  from 'README.TXT'
+  from 'build.gradle'
+  from( 'src' ) { into 'src' }
+}
+
+task dist( type: Tar, dependsOn: distCopy ) {
+
+  compression = "GZIP"
+  classifier = new SimpleDateFormat( "yyyyMMdd" ).format( new Date() )
+
+  from "${buildDir}/dist/"
+}

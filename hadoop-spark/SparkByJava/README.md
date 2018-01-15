@@ -1,0 +1,1 @@
+- 点击edit configuration，在左侧点击该项目。在右侧VM options中输入“-Dspark.master=local”，指示本程序本地单线程运行，再次运行即可。

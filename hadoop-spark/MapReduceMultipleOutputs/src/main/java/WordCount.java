@@ -23,6 +23,7 @@ public class WordCount {
     private static String delimiter_record = "\u0002";
     //private static int keyLength = 24 + 24 + 1 + delimiter_fields.length() * 2;
     private static int keyLength = 24;
+    private static String partitionName = "";
 
     /**
      * map:字符串的拆解为 key-value
@@ -108,7 +109,7 @@ public class WordCount {
                 //mos.write("text", key, result,key.toString());
 
                 //按照key 分目录存放文件
-                mos.write(NullWritable.get(), result, "job_start_year=" + key.toString() + '/');
+                mos.write(NullWritable.get(), result, partitionName + "=" + key.toString() + '/');
                 //mos.write("text", result, new Text("Hello"));
 
                 //System.out.println("Reducer====>key" + key.toString());
@@ -125,13 +126,22 @@ public class WordCount {
     }
 
 
+    /**
+     * 三个参数：输入路径，输出路径，分区key的名称
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
+
+        //获取分区表的key值
+        partitionName = args[2].trim();
+
         Configuration conf = new Configuration();
         conf.set("mapred.textoutputformat.separator", "");//设定分隔符
         conf.set("mapreduce.output.fileoutputformat.compress", "false");//压缩设置
 
 
-        Job job = Job.getInstance(conf, "PartitionByYear");
+        Job job = Job.getInstance(conf, "PartitionByKey");
         job.setJarByClass(WordCount.class);
 
         //job.setNumReduceTasks(1);
@@ -142,6 +152,7 @@ public class WordCount {
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
+
 
         //增加输出的名录
         LazyOutputFormat.setOutputFormatClass(job, TextOutputFormat.class);
@@ -159,7 +170,7 @@ public class WordCount {
      * mvn package
      *
      * hadoop 提交程序命令
-     * hadoop  jar /home/wl/PublicGitRepo/HadoopCoreDamon/hadoop-spark/MapReduceMultipleOutputs/target/MapReduce-1.0-SNAPSHOT.jar /user/wanglong/cv_job_input /user/wanglong/cv_job_output_2
+     * hadoop  jar /home/wl/PublicGitRepo/HadoopCoreDamon/hadoop-spark/MapReduceMultipleOutputs/target/MapReduce-1.0-SNAPSHOT.jar /user/wanglong/cv_job_input /user/wanglong/cv_job_output_2 job_start_year
      *
      *
      */

@@ -10,7 +10,7 @@ object PGTest extends App {
 
 //  classOf[org.postgresql.Driver]
   Class.forName("org.postgresql.Driver").newInstance
-  val con_str = "jdbc:postgresql://localhost:5432/ipinbase?user=wanglong&password=wanglong"
+  val con_str = "jdbc:postgresql://localhost:5432/itbase?user=triangle&password=triangle"
   val conn = DriverManager.getConnection(con_str)
   try {
     val stm = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY)

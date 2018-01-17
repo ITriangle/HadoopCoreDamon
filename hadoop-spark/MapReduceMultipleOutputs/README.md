@@ -25,7 +25,7 @@ export HADOOP_CONF_DIR=/etc/hadoop/conf
 向 hadoop 集群提交任务
 
 ```bash
-hadoop  jar /Project_Path/MapReduce/target/MapReduce-1.0-SNAPSHOT.jar /user/wanglong/wordcount/input /user/wanglong/wordcount/output
+hadoop  jar /Project_Path/MapReduce/target/MapReduce-1.0-SNAPSHOT.jar /user/triangle/wordcount/input /user/triangle/wordcount/output
 ```
 
 ### 多目录输出
@@ -39,7 +39,7 @@ hadoop  jar /Project_Path/MapReduce/target/MapReduce-1.0-SNAPSHOT.jar /user/wang
 
 ```sql
 -- 增加分区
-ALTER TABLE default.cv_job_new_test ADD PARTITION (job_start_year=2009) LOCATION '/user/wanglong/cv_job_output_2/job_start_year=2009';
+ALTER TABLE default.cv_job_new_test ADD PARTITION (job_start_year=2009) LOCATION '/user/triangle/cv_job_output_2/job_start_year=2009';
 
 -- 刷新表也是可以的
 MSCK REPAIR TABLE default.cv_job_new_test;

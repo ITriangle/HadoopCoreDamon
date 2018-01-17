@@ -21,10 +21,10 @@ object SparkPG extends App {
   // Loading data from a JDBC source
   val jdbcDF = spark.read
     .format("jdbc")
-    .option("url", "jdbc:postgresql://localhost/ipinbase")
+    .option("url", "jdbc:postgresql://localhost/itbase")
     .option("dbtable", "public.people")
-    .option("user", "wanglong")
-    .option("password", "wanglong")
+    .option("user", "triangle")
+    .option("password", "triangle")
     .load()
 
   // This import is needed to use the $-notation

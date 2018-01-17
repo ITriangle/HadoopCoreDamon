@@ -1,4 +1,4 @@
-package com.ipin;
+package com.it;
 
 /**
  * Created by wl on 17-6-23.

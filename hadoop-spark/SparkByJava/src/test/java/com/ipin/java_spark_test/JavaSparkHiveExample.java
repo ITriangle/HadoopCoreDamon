@@ -1,4 +1,4 @@
-package com.ipin.java_spark_test;
+package com.it.java_spark_test;
 
 import org.apache.hadoop.security.UserGroupInformation;
 import org.apache.spark.SparkConf;

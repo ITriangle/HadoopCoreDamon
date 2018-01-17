@@ -4,7 +4,7 @@
 <configuration>
   <property>
     <name>fs.defaultFS</name>
-    <value>hdfs://ipin-main</value>
+    <value>hdfs://it-main</value>
   </property>
   <property>
     <name>fs.trash.interval</name>

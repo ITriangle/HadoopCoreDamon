@@ -28,7 +28,7 @@
   </property>
   <property>
     <name>yarn.resourcemanager.zk-address</name>
-    <value>ipin43:2181,dev5:2181,dev4:2181,ipin44:2181,dev6:2181,ipin42:2181,ipin41:2181</value>
+    <value>it43:2181,dev5:2181,dev4:2181,it44:2181,dev6:2181,it42:2181,it41:2181</value>
   </property>
   <property>
     <name>yarn.resourcemanager.store.class</name>

@@ -170,7 +170,7 @@ public class WordCount {
      * mvn package
      *
      * hadoop 提交程序命令
-     * hadoop  jar /home/wl/PublicGitRepo/HadoopCoreDamon/hadoop-spark/MapReduceMultipleOutputs/target/MapReduce-1.0-SNAPSHOT.jar /user/wanglong/cv_job_input /user/wanglong/cv_job_output_2 job_start_year
+     * hadoop  jar /home/wl/PublicGitRepo/HadoopCoreDamon/hadoop-spark/MapReduceMultipleOutputs/target/MapReduce-1.0-SNAPSHOT.jar /user/triangle/cv_job_input /user/triangle/cv_job_output_2 job_start_year
      *
      *
      */

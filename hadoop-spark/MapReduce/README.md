@@ -25,5 +25,5 @@ export HADOOP_CONF_DIR=/etc/hadoop/conf
 向 hadoop 集群提交任务
 
 ```bash
-hadoop  jar /Project_Path/MapReduce/target/MapReduce-1.0-SNAPSHOT.jar /user/wanglong/wordcount/input /user/wanglong/wordcount/output
+hadoop  jar /Project_Path/MapReduce/target/MapReduce-1.0-SNAPSHOT.jar /user/triangle/wordcount/input /user/triangle/wordcount/output
 ```

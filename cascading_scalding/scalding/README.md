@@ -24,4 +24,4 @@ hadoop jar target/scala-scalding-1.0-SNAPSHOT-jar-with-dependencies.jar com.twit
 - `hdfs dfs -put /home/wl/WLWork/Tmp_Git/hadoop-framework-examples-master/scalding/users_test.txt ./scalding/input1`
 
 
-- `hadoop jar /home/wl/WLWork/Tmp_Git/hadoop-framework-examples-master/scalding/target/scala-scalding-1.0-SNAPSHOT-jar-with-dependencies.jar com.twitter.scalding.Tool main.scala.com.matthewrathbone.scalding.Main --hdfs --input1 /user/wanglong/scalding/input1 --input2 /user/wanglong/scalding/input2 --output /user/wanglong/scalding/output`
+- `hadoop jar /home/wl/WLWork/Tmp_Git/hadoop-framework-examples-master/scalding/target/scala-scalding-1.0-SNAPSHOT-jar-with-dependencies.jar com.twitter.scalding.Tool main.scala.com.matthewrathbone.scalding.Main --hdfs --input1 /user/triangle/scalding/input1 --input2 /user/triangle/scalding/input2 --output /user/triangle/scalding/output`

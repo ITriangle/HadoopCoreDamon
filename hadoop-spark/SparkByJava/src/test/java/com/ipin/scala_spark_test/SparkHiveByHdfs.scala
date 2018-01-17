@@ -1,4 +1,4 @@
-package com.ipin.scala_spark_test
+package com.it.scala_spark_test
 
 import java.security.PrivilegedAction
 

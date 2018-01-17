@@ -136,7 +136,7 @@ public class WordCount {
      * mvn package
      *
      * hadoop 提交程序命令
-     * hadoop  jar /home/wl/WLWork/hadoop-spark/MapReduce/target/MapReduce-1.0-SNAPSHOT.jar /user/wanglong/wordcount/input /user/wanglong/wordcount/output
+     * hadoop  jar /home/wl/WLWork/hadoop-spark/MapReduce/target/MapReduce-1.0-SNAPSHOT.jar /user/triangle/wordcount/input /user/triangle/wordcount/output
      *
      *
      */

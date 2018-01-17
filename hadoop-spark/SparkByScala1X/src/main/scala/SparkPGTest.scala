@@ -11,7 +11,7 @@ object SparkPGTest extends App {
   val sc = new SparkContext(conf)
   val sqlContext = new SQLContext(sc)
 
-  val db_url = "jdbc:postgresql://localhost:5432/ipinbase?user=wanglong&password=wanglong"
+  val db_url = "jdbc:postgresql://localhost:5432/itbase?user=triangle&password=triangle"
   val schema_tablename = "public.people"
   val jdbcDF = sqlContext.read.format("jdbc").options(Map(
     "driver" -> "org.postgresql.Driver",

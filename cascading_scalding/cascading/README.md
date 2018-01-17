@@ -17,5 +17,5 @@ gradle jar
 
 run 
 ```
-hadoop  jar /home/wl/WLWork/Tmp_Git/ProjectTemplate-master/build/libs/ProjectTemplate-master.jar /user/wanglong/cascading/apache.200.txt ./local
+hadoop  jar /home/wl/WLWork/Tmp_Git/ProjectTemplate-master/build/libs/ProjectTemplate-master.jar /user/triangle/cascading/apache.200.txt ./local
 ```
